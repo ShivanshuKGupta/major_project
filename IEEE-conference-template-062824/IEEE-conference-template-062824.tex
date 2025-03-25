@@ -1,0 +1,310 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+%Template version as of 6/27/2024
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{WebMind\\
+    % {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured for https://ieeexplore.ieee.org  and
+    % should not be used}
+    % \thanks{Identify applicable funding agency here. If none, delete this.}
+}
+
+\author{
+    \IEEEauthorblockN{1\textsuperscript{nd} Prayas Raj}
+    \IEEEauthorblockA{\textit{Department of Computer Science and Engineering} \\
+        \textit{Indian Institute of Information Technology, Raichur} \\
+        Raichur, India \\
+        cs21b1022@iiitr.ac.in}
+
+    \and
+    \IEEEauthorblockN{2\textsuperscript{st} Shivanshu Gupta}
+    \IEEEauthorblockA{\textit{Department of Computer Science and Engineering} \\
+        \textit{Indian Institute of Information Technology, Raichur} \\
+        Raichur, India \\
+        shivanshukgupta@gmail.com}
+}
+
+\maketitle
+
+\begin{abstract}
+    With the rapid advancements in artificial intelligence, AI models have developed strong reasoning and decision-making abilities. However, their capability to execute real-world tasks autonomously remains limited. This project aims to bridge this gap by enabling AI models to interact with and control web-based applications on behalf of users. By leveraging AI's reasoning power, the system can perform browser-based tasks such as navigating websites, extracting information, and executing user-defined operations. This approach enhances automation, reduces human effort, and expands the practical applications of AI in everyday digital interactions.
+\end{abstract}
+
+\begin{IEEEkeywords}
+    AI automation, web interaction, browser control, task execution, intelligent agents.
+\end{IEEEkeywords}
+
+\section{Introduction}
+The rapid advancements in artificial intelligence have significantly improved its ability to reason and make decisions. However, AI still lacks the capability to autonomously execute tasks within digital environments, especially for everyday browser-based interactions. Our project aims to bridge this gap by developing a system that enables AI models to control web applications and perform tasks on behalf of users. This will allow users to automate repetitive actions, enhance productivity, and simplify complex workflows.
+
+\subsection{Impact and Benefits}
+By allowing AI to interact with and manipulate web-based user interfaces, this system has the potential to significantly reduce manual effort. Users can delegate routine tasks such as information retrieval, form filling, and online transactions to the AI, freeing up time for more critical decision-making. This solution also holds value for individuals with accessibility needs, helping them navigate digital platforms more efficiently.
+
+\subsection{Existing Research and Comparative Analysis}
+To develop an effective AI-driven automation system, we will analyze and discuss existing research papers that focus on key tasks such as object detection, UI element recognition, and relationship mapping between interface components. We will compare various models based on their accuracy, efficiency, and applicability to real-world scenarios.
+
+\subsection{Proposed Solution}
+Building on our research, we will design and implement our own AI-driven automation system. This will involve a structured approach to UI element detection, relationship recognition, and task execution. We will detail the internal workings of our solution, including its architecture, model selection, and optimization strategies.
+
+\subsection{Performance Evaluation and Market Comparison}
+Finally, we will evaluate our system's performance against existing automation tools, such as OpenAI's Operator, Runner H, and AgentE. By benchmarking our approach against these solutions, we aim to highlight its strengths, identify potential areas for improvement, and demonstrate its practical viability in real-world applications.
+
+\section{Impact and Benefits}
+Our AI-powered web automation software has numerous applications across different domains. By enabling AI models to interact with and control browser-based applications, it enhances productivity, reduces manual effort, and opens up new possibilities for automation. Below are some key use cases, their target audience, and their impact.
+
+\subsection{Personal Task Automation}
+\textbf{Target Audience:} General users, busy professionals, students
+
+\textbf{Usage:} Users can automate tasks like online shopping, scheduling appointments, filling out forms, and gathering information from multiple websites.
+
+\textbf{Impact:} Saves time and effort in repetitive digital tasks, allowing users to focus on more important activities.
+
+\subsection{AI-Powered Virtual Assistants}
+\textbf{Target Audience:} General users, business professionals, digital marketers
+
+\textbf{Usage:} The software can act as a personal assistant, handling tasks like checking emails, finding schedules, booking flights, or setting reminders.
+
+\textbf{Impact:} Enhances convenience by automating daily activities and streamlining workflow.
+
+\subsection{Web Scraping and Data Extraction}
+\textbf{Target Audience:} Researchers, journalists, financial analysts, market researchers
+
+\textbf{Usage:} AI can extract and analyze data from multiple sources, such as collecting news, stock prices, product comparisons, or social media trends.
+
+\textbf{Impact:} Enables quick and accurate data gathering for research and decision-making.
+
+\subsection{Accessibility for Disabled Users}
+\textbf{Target Audience:} Visually impaired and physically challenged individuals
+
+\textbf{Usage:} AI can navigate websites, read content aloud, and interact with forms or buttons for users who face difficulties using traditional input devices.
+
+\textbf{Impact:} Increases digital accessibility, making the internet more inclusive for disabled individuals.
+
+\subsection{Automated Customer Support \& Chatbot Enhancements}
+\textbf{Target Audience:} Businesses, e-commerce platforms, customer service teams
+
+\textbf{Usage:} AI can navigate websites to find relevant answers, handle customer queries, and assist chatbots in providing faster responses.
+
+\textbf{Impact:} Reduces human workload in customer service, leading to quicker responses and improved user experience.
+
+\subsection{Social Media Management}
+\textbf{Target Audience:} Social media managers, influencers, marketing teams
+
+\textbf{Usage:} AI can schedule posts, reply to messages, monitor trends, and even generate reports based on user engagement.
+
+\textbf{Impact:} Saves time and effort in managing multiple social media accounts, improving efficiency.
+
+\subsection{Automated Testing for Web Applications}
+\textbf{Target Audience:} Software testers, QA engineers, developers
+
+\textbf{Usage:} The AI can simulate user interactions, test UI elements, and verify web application functionality without manual intervention.
+
+\textbf{Impact:} Speeds up software testing, improves accuracy, and reduces human errors in quality assurance.
+
+\subsection{Fraud Detection and Security Monitoring}
+\textbf{Target Audience:} Cybersecurity professionals, financial institutions, online service providers
+
+\textbf{Usage:} AI can monitor web activity, detect unusual patterns, and flag potential fraud or cyber threats.
+
+\textbf{Impact:} Enhances digital security by providing proactive monitoring and fraud prevention.
+
+\subsection{Financial and Investment Automation}
+\textbf{Target Audience:} Investors, traders, financial advisors
+
+\textbf{Usage:} AI can track stock markets, execute trades, and provide real-time insights based on web data.
+
+\textbf{Impact:} Helps investors make informed decisions faster, reducing manual monitoring efforts.
+
+\subsection{Educational Assistance}
+\textbf{Target Audience:} Students, teachers, online learners
+
+\textbf{Usage:} AI can fetch learning materials, summarize articles, assist with online assignments, and manage study schedules.
+
+\textbf{Impact:} Makes learning more efficient and accessible by reducing time spent searching for resources.
+
+\subsection{E-Governance and Public Services}
+\textbf{Target Audience:} Government agencies, citizens seeking online services
+
+\textbf{Usage:} AI can assist in automating form submissions, tracking application statuses, and fetching government-related information.
+
+\textbf{Impact:} Improves accessibility to government services and reduces paperwork for citizens.
+
+\subsection{E-Commerce and Price Comparison}
+\textbf{Target Audience:} Online shoppers, businesses, product researchers
+
+\textbf{Usage:} AI can compare product prices, find discounts, and alert users about the best deals.
+
+\textbf{Impact:} Helps users save money and businesses optimize pricing strategies.
+
+\section{Project Boundaries and Scope}
+This project is focused on enabling AI models to control and interact with web-based applications. However, to maintain clarity and feasibility, certain boundaries and constraints have been defined.
+
+\subsection{Scope of the Project}
+\begin{itemize}
+    \item \textbf{Browser-Based Tasks Only:} This software is exclusively designed to handle tasks within a web browser. It will not be capable of controlling or automating native desktop applications.
+    \item \textbf{Simple Web Applications:} The project is primarily meant for automating interactions with standard web applications, such as form filling, data retrieval, and navigation. Complex activities like playing online games or dynamically surfing entertainment platforms are beyond the scope of this project.
+    \item \textbf{Extensions of the Core Solution:} While various potential use cases have been mentioned earlier, they are merely extensions of the core technology. Our main focus remains on developing the fundamental interaction capabilities, leaving additional functionalities such as voice-based input to the open-source community for further enhancements.
+    \item \textbf{Privacy Considerations:} The privacy of user data depends on the deployment choice. If a cloud-based LLM, such as ChatGPT, is used, the data privacy is subject to the policies of the service provider. Users are advised to share only publicly available information when interacting with cloud-based models. Alternatively, a self-hosted LLM offers greater control over privacy and security.
+\end{itemize}
+
+\subsection{Aspects Not Covered in This Project}
+The following advanced capabilities are currently not part of this project but may be explored in future research:
+\begin{itemize}
+    \item \textbf{Reinforcement Learning:} The ability to remember past tasks and improve future performance based on user interactions is not implemented in this version.
+
+    \item \textbf{Cross-Device Operation:} The software does not support running on a server or multiple devices to enable remote control of desktops via mobile phones.
+
+    \item \textbf{Task Reminders and Scheduling:} Features such as reminding users of deadlines or scheduled activities are not included in the initial implementation.
+
+    \item \textbf{Heuristic-Based Adjustments:} While AI-driven automation is the focus, the software does not currently integrate heuristics such as automatically retrying failed actions with alternative methods.
+
+    \item \textbf{No Interaction with Encrypted or Highly Dynamic Content:}
+          The software will not be designed to interact with content that requires decryption, such as DRM-protected media, banking portals with dynamic token-based authentication, or highly volatile AJAX-based pages where elements constantly change.
+
+    \item \textbf{Not a Full AI Agent, but a Task Executor:}
+          The system will not function as a fully autonomous AI agent that makes independent decisions beyond executing specific user-defined tasks. It will always require user input or predefined workflows to operate.
+
+    \item \textbf{No Direct API-Based Automation:}
+          Many web services provide APIs for automation, but this project is focused on browser-based interaction, not direct API calls to services like Gmail API or Twitter API.
+
+    \item \textbf{No Real-Time Multi-User Collaboration:}
+          The system is designed for individual use, and it does not support multiple users interacting with the same session simultaneously. Collaborative AI agents controlling the same browser across multiple users or locations are out of scope.
+
+    \item \textbf{Not Meant for Bots or Mass Web Interaction:}
+          This software is not intended for large-scale web crawling, scraping, or bot-driven automation that could violate website terms of service. It focuses on assisting users with personal and professional tasks within ethical boundaries.
+
+    \item \textbf{No Deep Customization Without Developer Input:}
+          While the system may allow some level of configuration, advanced custom workflows, integrations, or AI model modifications would require developer intervention rather than a no-code interface for end-users.
+
+    \item \textbf{Limited to Standard Web Browsers:}
+          The system is built to work within standard web browsers (Chrome, Firefox, Edge, etc.) and does not support automation in specialized browsing environments like embedded web views in games or proprietary software.
+
+\end{itemize}
+
+By defining these boundaries, we ensure a focused and structured approach to development while leaving room for future enhancements and community-driven improvements.
+
+\section{Objectives}
+The primary objective of this project is to develop an AI-driven software solution capable of interacting with and controlling web browsers to automate tasks and extract information. The following key objectives define the scope of the project:
+
+\begin{enumerate}
+    \item \textbf{Develop an AI-Powered Web Automation Software:}
+          Design and implement a software system that enables AI models to control web browsers and facilitate interaction with web pages for information extraction and task execution.
+
+    \item \textbf{Accurate UI Element Detection:}
+          Develop mechanisms to accurately detect and classify UI elements (buttons, input fields, links, tables, etc.) using a combination of techniques, including:
+          \begin{itemize}
+              \item Parsing DOM (Document Object Model) content to extract structured data.
+              \item Employing computer vision techniques to analyze UI components visually.
+          \end{itemize}
+
+    \item \textbf{Understanding UI Element Relationships:}
+          Implement algorithms to determine the relationships between UI elements, such as:
+          \begin{itemize}
+              \item Identifying parent-child relationships in DOM structures.
+              \item Recognizing contextual groupings (e.g., input field and its corresponding label).
+              \item Detecting logical flows between elements for smooth automation.
+          \end{itemize}
+
+    \item \textbf{Leveraging Large Language Models (LLMs) for Decision Making:}
+          Integrate the power of LLMs to analyze extracted UI information and decide on appropriate follow-up actions, such as:
+          \begin{itemize}
+              \item Interpreting user intent and converting it into actionable browser interactions.
+              \item Handling ambiguous UI structures by reasoning about possible actions.
+              \item Generating step-by-step execution plans dynamically.
+          \end{itemize}
+
+    \item \textbf{Executing AI-Decided Operations through Python Automation:}
+          Develop a robust Python-based execution pipeline that:
+          \begin{itemize}
+              \item Receives operation instructions from the LLM.
+              \item Uses automation libraries (e.g., Selenium, Playwright, or Puppeteer) to interact with web pages.
+              \item Handles exceptions and dynamically adjusts to unexpected scenarios.
+          \end{itemize}
+
+    \item \textbf{Implementing a User-Friendly Interface:}
+          Design an intuitive UI that allows users to interact with the software easily, including:
+          \begin{itemize}
+              \item A dashboard to monitor AI-driven interactions.
+              \item Controls to adjust automation parameters.
+              \item Logs and explanations of executed actions for transparency.
+          \end{itemize}
+
+    \item \textbf{Ensuring Privacy and Security:}
+          Address privacy concerns by:
+          \begin{itemize}
+              \item Providing an option for users to self-host the AI model to avoid sending sensitive data to cloud-based services.
+              \item Implementing secure handling of user credentials and private browsing sessions.
+              \item Avoiding unauthorized interactions that may violate website terms of service.
+          \end{itemize}
+
+    \item \textbf{Optimizing for Performance and Scalability:}
+          Ensure that the system is lightweight, efficient, and capable of handling:
+          \begin{itemize}
+              \item Large-scale automation without excessive resource consumption.
+              \item Seamless execution across different web browsers.
+              \item Adaptability to new web layouts and technologies over time.
+          \end{itemize}
+
+\end{enumerate}
+
+\section{Literature Survey}
+
+\section{Novelty}
+
+% \section*{Acknowledgment}
+
+% The preferred spelling of the word ``acknowledgment'' in America is without
+% an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B.
+% G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor
+% acknowledgments in the unnumbered footnote on the first page.
+
+% \section*{References}
+
+% Please number citations consecutively within brackets \cite{b1}. The
+% sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference
+% number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at
+% the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+
+% Number footnotes separately in superscripts. Place the actual footnote at
+% the bottom of the column in which it was cited. Do not put footnotes in the
+% abstract or reference list. Use letters for table footnotes.
+
+% Unless there are six authors or more give all authors' names; do not use
+% ``et al.''. Papers that have not been published, even if they have been
+% submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers
+% that have been accepted for publication should be cited as ``in press'' \cite{b5}.
+% Capitalize only the first word in a paper title, except for proper nouns and
+% element symbols.
+
+% For papers published in translation journals, please give the English
+% citation first, followed by the original foreign-language citation \cite{b6}.
+
+% \begin{thebibliography}{00}
+%     \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+%     \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
+%     \bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
+%     \bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
+%     \bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
+%     \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
+%     \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+%     \bibitem{b8} D. P. Kingma and M. Welling, ``Auto-encoding variational Bayes,'' 2013, arXiv:1312.6114. [Online]. Available: https://arxiv.org/abs/1312.6114
+%     \bibitem{b9} S. Liu, ``Wi-Fi Energy Detection Testbed (12MTC),'' 2023, gitHub repository. [Online]. Available: https://github.com/liustone99/Wi-Fi-Energy-Detection-Testbed-12MTC
+%     \bibitem{b10} ``Treatment episode data set: discharges (TEDS-D): concatenated, 2006 to 2009.'' U.S. Department of Health and Human Services, Substance Abuse and Mental Health Services Administration, Office of Applied Studies, August, 2013, DOI:10.3886/ICPSR30122.v2
+%     \bibitem{b11} K. Eves and J. Valasek, ``Adaptive control for singularly perturbed systems examples,'' Code Ocean, Aug. 2023. [Online]. Available: https://codeocean.com/capsule/4989235/tree
+% \end{thebibliography}
+
+% \vspace{12pt}
+% \color{red}
+% IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+
+\end{document}

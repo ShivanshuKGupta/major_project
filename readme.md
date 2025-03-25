@@ -1,3 +1,5 @@
+# Major Project
+
 ## Aim
 Nowadays, AI is getting smarter and smarter, everyday. It has also gained a good enough thinking and reasoning abilities. However, Even if any task doesn't really require any complicated thinking/reasoning it can still not execute the tasks for you.
 
@@ -45,15 +47,41 @@ Our scope for this project is to develop a software which can
 1. **Future Potential**: If extended beyond browsers, it could lead to AI-driven automation across all software applications, transforming how people interact with technology.
 
 ## How?
-![Workflow](Workflow.png)
 
+### Detect Widgets
+#### DOM Parsing Approach
+1. Use DOM Parsing to extract buttons, text fields, and other elements.
+#### Screenshot Approach
+1. Take a screenshot of the browser window using selenium or playwright or puppeteer.
+1. Send the screenshot to a model to detect some more complex elements.
+#### Hybrid Approach
+1. Use a combination of both approaches to get the best results.
+
+### Detect Relationships
+#### Ideal Model
+1. A model that can detect relationships between different elements on a webpage and also group them.
+#### UI Image to Text Models
+1. [pix2struct](https://github.com/google-research/pix2struct): Screenshot Parsing as Pretraining for Visual Language Understanding.
+![Examples of visually-situated language understanding tasks](images/pix2struct_examples.png)
+1. [Gemini 2.0 Flash](https://aistudio.google.com/apikey): Works generally good enough for most tasks.
+1. [Donut (OCR-Free Document Understanding Transformer)](): ??
+1. [LayoutLMv3](): ??
+1. [Detectron2 + Graph Neural Networks (GNN)](): ??
+
+### Datasets
+1. RICO Dataset – 66K UI screenshots with annotations.
+1. WebUI Dataset – Available in research papers for UI automation.
+
+### Diagram
+![Workflow](Workflow.png)
 
 [Draw.io](https://app.diagrams.net/#G1MJhnos0fNUarfe69f8H58qv1kpj5sGZb#%7B%22pageId%22%3A%22Ar7Q7IABHMq8kOB4KptJ%22%7D) 
 
-## Dataset?
-
 ## What is included in our future plans?
+1. Use DOM Parsing (PlayWright or Puppeteer) instead of screenshots (slow and error-prone), or best would be a hybrid approach.
+1. Direct API Calls Instead of UI Automation (if available): Some tasks (e.g., checking emails, placing orders) are easier through API calls rather than UI interaction.
 1. Let this software run in the background, so you need not keep a browser window open all the time.
-1. Remember and learn from the tasks you perform, so it can better help you in your future tasks.
+1. Reinforcement Learning: Remember and learn from the tasks you perform, so it can better help you in your future tasks.
 1. Let this software run on a server/multiple devices, so you can control your desktop from your phone.
 1. It can remind you of any deadlines you have.
+1. Might need to integrate heuristics with LLM responses (e.g., "If button click fails, try another approach").

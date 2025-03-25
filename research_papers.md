@@ -1,6 +1,12 @@
 # Research Papers
 Some research papers that I have read and found interesting.
 
+## Datasets
+
+1. [Webpage elements annotated data](https://www.kaggle.com/datasets/nilanjandebnath/webpage-elements-annotated-data)
+2. [Annotated UI Element Dataset for Desktop Environments](https://zenodo.org/records/10822752)
+3. [WebUI](https://paperswithcode.com/dataset/webui)
+
 ## Desktop Elements Detection Using Deep Learning
 
 1. [Link to original paper](https://asiffer.github.io/posts/desktop-elements-detection-using-deep-learning/)
