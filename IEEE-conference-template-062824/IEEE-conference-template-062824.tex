@@ -9,6 +9,11 @@
 \usepackage{graphicx}
 \usepackage{textcomp}
 \usepackage{xcolor}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{lscape}
+\usepackage{hyperref}
+
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -259,52 +264,139 @@ The primary objective of this project is to develop an AI-driven software soluti
 
 \section{Literature Survey}
 
+\subsection{Research Paper 1: AutoWebGLM: A Large Language Model-based Web Navigating Agent (Lai et al., 2024)}
+This paper introduces AutoWebGLM, a web navigation agent based on ChatGLM3-6B, which utilizes HTML simplification, curriculum training, and reinforcement learning to autonomously navigate and interact with webpages for complex tasks \cite{lai2024autowebglm}. AutoWebGLM addresses the challenges of complex HTML, versatile webpage actions, and open-domain task difficulty by first simplifying HTML to retain vital information, then using a hybrid human-AI method to create curriculum training data, and finally employing reinforcement learning with rejection sampling to enhance webpage comprehension, browser operation, and task decomposition. The research also introduces AutoWebBench, a bilingual benchmark for evaluating real-world web navigation tasks, demonstrating AutoWebGLM's potential to outperform even GPT-4 in challenging web environments.
+
+\subsection{Research Paper 2: Steward: An LLM-Powered Web Automation Tool for Cost-Effective and Scalable End-to-End Web Interactions}
+This paper presents Steward, a novel LLM-powered web automation tool integrated with the Playwright framework, designed to provide a cost-effective and scalable solution for automating web interactions based on natural language instructions \cite{steward2024}. Steward aims to overcome the limitations of traditional frameworks that require manual coding by enabling natural language-driven interaction with websites. The system is designed to be fully autonomous, requiring only a high-level natural language goal to perform operations on websites until the desired end state is reached. Evaluations demonstrate Steward's efficiency in terms of speed and cost, achieving a median runtime of 8.52 to 10.14 seconds and a cost of \$0.028 per action, with further reductions through a caching mechanism. It also shows a 40\% task completion rate on real websites, highlighting its potential as a practical web automation solution.
+
+\subsection{Research Paper 3: The Potential of LLMs in Automating Software Testing: From Generation to Reporting}
+This paper explores an agent-oriented framework leveraging LLMs to automate various aspects of software testing, including generating unit tests and controlling a browser-like interface for test execution and reporting \cite{llm_testing2024, llm_testing_arxiv2024}. The proposed framework, named Kashef, integrates LLMs to generate unit tests dynamically, visualize call graphs, and automate the execution and reporting of tests, aiming to reduce human intervention and enhance testing efficiency. Evaluations across multiple applications in Python and Java demonstrate the system's high test coverage and efficient operation, underscoring the potential of LLM-powered agents to streamline software testing workflows while addressing challenges in scalability and accuracy. Kashef employs a multi-agent architecture comprising a Test Engineer and an HTML Interpreter (both LLM-powered), alongside a Code Executor.
+
+\subsection{Research Paper 4: Large Language Model-Brained GUI Agents: A Survey (Zhang et al., 2024)}
+This survey paper provides a comprehensive overview of the rapidly evolving field of LLM-powered GUI agents, including those for web navigation, discussing their historical evolution, core components, and advanced techniques \cite{zhang2024survey}. The paper explores how the advent of LLMs, particularly multimodal models, has ushered in a new era of GUI automation, enabling agents to interpret complex GUI elements and autonomously execute actions based on natural language instructions. It addresses critical research questions such as existing GUI agent frameworks, data collection and utilization for training, the development of large action models, and evaluation metrics. By consolidating foundational knowledge and state-of-the-art developments, the survey aims to guide researchers and practitioners in overcoming challenges and unlocking the full potential of LLM-brained GUI agents across web, mobile, and desktop domains.
+
+\subsection{Research Paper 5: Utilizing LLMs to Infer Clickability of HTML Elements for Enhanced Deep Reinforcement Learning-Based Web Application Testing}
+This paper proposes a method to enhance deep reinforcement learning for web application testing by using LLMs to infer whether HTML elements are clickable, incorporating this inference into the DRL state to improve testing efficiency \cite{clickability2025}. The research addresses the challenges of traditional GUI testing by integrating the extensive knowledge of LLMs, which are not limited to web apps, to aid in obtaining states in DRL when direct collection is difficult. The hypothesis is that the probabilistic nature of LLM inference can be compensated by the robustness of DRL models. By using LLMs to infer the clickability of HTML elements and incorporating this into the DRL state, the proposed method aims to improve the efficiency and accuracy of automated black-box GUI testing for web applications.
+
+\subsection{Comparative Analysis}
+The five research papers summarized above showcase a variety of architectural designs and implementation strategies for browser control software powered by LLMs.
+
+\onecolumn
+\begin{longtable}{|>{\raggedright\arraybackslash}p{2.5cm}|>{\raggedright\arraybackslash}p{2.5cm}|>{\raggedright\arraybackslash}p{2.5cm}|>{\raggedright\arraybackslash}p{2.5cm}|>{\raggedright\arraybackslash}p{2.5cm}|>{\raggedright\arraybackslash}p{2.5cm}|}
+    \hline
+    \textbf{Feature}                       & \textbf{AutoWebGLM}                         & \textbf{Steward}                                & \textbf{Software Testing Paper}   & \textbf{GUI Agents Survey}                      & \textbf{Clickability Inference Paper} \\
+    \hline
+    \endfirsthead
+
+    \hline
+    \textbf{Feature}                       & \textbf{AutoWebGLM}                         & \textbf{Steward}                                & \textbf{Software Testing Paper}   & \textbf{GUI Agents Survey}                      & \textbf{Clickability Inference Paper} \\
+    \hline
+    \endhead
+
+    \hline
+    \endfoot
+
+    \hline
+    \endlastfoot
+
+    \textbf{Control Mechanism}             & Monolithic (Fine-tuned LLM)                 & LLM + Framework                                 & Distributed (Multi-Agent)         & Varies (Direct LLM to Complex Systems)          & LLM as Component in DRL               \\
+    \hline
+    \textbf{Browser Interaction Framework} & Not explicitly mentioned                    & Playwright                                      & Selenium                          & Discusses systems using Selenium \& Playwright  & Selenium                              \\
+    \hline
+    \textbf{Webpage Understanding}         & HTML Simplification Algorithm               & Implied through Playwright integration          & HTML Interpreter Agent            & DOM Parsing, Computer Vision, Multimodal LLMs   & LLM infers clickability from HTML     \\
+    \hline
+    \textbf{LLM Used}                      & ChatGLM3-6B                                 & Not specified in abstract                       & GPT-3.5, GPT-4, CodeLlama, Llama2 & Wide range, including GPT-4 \& open-source LLMs & Not detailed in abstract              \\
+    \hline
+    \textbf{Fine-tuning/Training Data}     & Curriculum training, Reinforcement Learning & High accuracy without training for top elements & Not detailed in abstract          & Discusses data collection and utilization       & Not detailed in abstract              \\
+    \hline
+\end{longtable}
+\twocolumn
+
 \section{Novelty}
+Our project introduces several innovative aspects that distinguish it from existing solutions in the field of AI-driven web automation:
 
-% \section*{Acknowledgment}
+\subsection{Open-Source Architecture}
+Unlike many proprietary solutions in the market, our system is designed with an open-source architecture. This approach fosters transparency, community collaboration, and continuous improvement. The open-source nature allows developers to:
+\begin{itemize}
+    \item Access and modify the source code freely
+    \item Contribute to the project's development
+    \item Create custom extensions and plugins
+    \item Share improvements with the community
+\end{itemize}
 
-% The preferred spelling of the word ``acknowledgment'' in America is without
-% an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B.
-% G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor
-% acknowledgments in the unnumbered footnote on the first page.
+\subsection{Self-Hostable Design}
+A key differentiator of our system is its self-hostable architecture. Users have the flexibility to:
+\begin{itemize}
+    \item Deploy the system on their own infrastructure
+    \item Maintain complete control over their data and operations
+    \item Customize the system according to their specific needs
+    \item Avoid dependency on external cloud services
+\end{itemize}
 
-% \section*{References}
+\subsection{Privacy-First Approach}
+Our system prioritizes user privacy through multiple mechanisms:
+\begin{itemize}
+    \item \textbf{Self-Hosted LLM Option:} Users can deploy their own LLM instance, ensuring sensitive data never leaves their infrastructure
+    \item \textbf{Local Processing:} Critical operations are performed locally, minimizing data exposure
+    \item \textbf{Configurable Privacy Settings:} Users can fine-tune privacy parameters based on their requirements
+    \item \textbf{Transparent Data Handling:} Clear documentation of data flow and storage practices
+\end{itemize}
 
-% Please number citations consecutively within brackets \cite{b1}. The
-% sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference
-% number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at
-% the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+\subsection{Adaptive Learning System}
+Unlike traditional automation tools, our system incorporates:
+\begin{itemize}
+    \item Dynamic adaptation to different website layouts and structures
+    \item Learning from user interactions to improve future performance
+    \item Context-aware decision making for complex web interactions
+    \item Intelligent error recovery and alternative action planning
+\end{itemize}
 
-% Number footnotes separately in superscripts. Place the actual footnote at
-% the bottom of the column in which it was cited. Do not put footnotes in the
-% abstract or reference list. Use letters for table footnotes.
+\subsection{Multi-Modal Understanding}
+Our solution combines multiple approaches for robust web interaction:
+\begin{itemize}
+    \item DOM-based structural analysis
+    \item Visual element recognition
+    \item Natural language understanding
+    \item Contextual relationship mapping
+\end{itemize}
 
-% Unless there are six authors or more give all authors' names; do not use
-% ``et al.''. Papers that have not been published, even if they have been
-% submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers
-% that have been accepted for publication should be cited as ``in press'' \cite{b5}.
-% Capitalize only the first word in a paper title, except for proper nouns and
-% element symbols.
+\subsection{User-Centric Design}
+The system is built with a strong focus on user experience:
+\begin{itemize}
+    \item Natural language interface for task specification
+    \item Intuitive control mechanisms
+    \item Detailed operation logging and explanation
+    \item Customizable automation workflows
+\end{itemize}
 
-% For papers published in translation journals, please give the English
-% citation first, followed by the original foreign-language citation \cite{b6}.
+\subsection{Extensible Framework}
+The architecture supports future enhancements through:
+\begin{itemize}
+    \item Modular plugin system
+    \item Standardized API interfaces
+    \item Custom action definition capabilities
+    \item Integration with external tools and services
+\end{itemize}
 
-% \begin{thebibliography}{00}
-%     \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
-%     \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
-%     \bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
-%     \bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
-%     \bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-%     \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-%     \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
-%     \bibitem{b8} D. P. Kingma and M. Welling, ``Auto-encoding variational Bayes,'' 2013, arXiv:1312.6114. [Online]. Available: https://arxiv.org/abs/1312.6114
-%     \bibitem{b9} S. Liu, ``Wi-Fi Energy Detection Testbed (12MTC),'' 2023, gitHub repository. [Online]. Available: https://github.com/liustone99/Wi-Fi-Energy-Detection-Testbed-12MTC
-%     \bibitem{b10} ``Treatment episode data set: discharges (TEDS-D): concatenated, 2006 to 2009.'' U.S. Department of Health and Human Services, Substance Abuse and Mental Health Services Administration, Office of Applied Studies, August, 2013, DOI:10.3886/ICPSR30122.v2
-%     \bibitem{b11} K. Eves and J. Valasek, ``Adaptive control for singularly perturbed systems examples,'' Code Ocean, Aug. 2023. [Online]. Available: https://codeocean.com/capsule/4989235/tree
-% \end{thebibliography}
+These novel aspects collectively position our solution as a comprehensive, user-friendly, and privacy-conscious approach to AI-driven web automation, addressing key limitations in existing solutions while providing unique advantages for end users.
 
-% \vspace{12pt}
-% \color{red}
-% IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+\begin{thebibliography}{00}
+    \bibitem{b1} Browser automation: Going beyond the limits of LLMs | CLOVA, accessed March 25, 2025, \url{https://clova.ai/en/tech-blog/browser-automation-going-beyond-the-limits-of-llms}
+    \bibitem{b2} Large Language Model-Brained GUI Agents: A Survey - arXiv, accessed March 25, 2025, \url{https://arxiv.org/html/2411.18279v3}
+    \bibitem{b3} Steward: Natural Language Web Automation - arXiv, accessed March 25, 2025, \url{https://arxiv.org/html/2409.15441v1}
+    \bibitem{b4} (PDF) The Potential of LLMs in Automating Software Testing: From ..., accessed March 25, 2025, \url{https://www.researchgate.net/publication/387670287_The_Potential_of_LLMs_in_Automating_Software_Testing_From_Generation_to_Reporting}
+    \bibitem{b5} The Potential of LLMs in Automating Software Testing: From Generation to Reporting - arXiv, accessed March 25, 2025, \url{https://arxiv.org/html/2501.00217v1}
+    \bibitem{b6} Skyvern-AI/skyvern: Automate browser-based workflows with LLMs and Computer Vision - GitHub, accessed March 25, 2025, \url{https://github.com/Skyvern-AI/skyvern}
+    \bibitem{b7} www.scitepress.org, accessed March 25, 2025, \url{https://www.scitepress.org/Papers/2025/132488/132488.pdf}
+    \bibitem{b8} Develop Browser Agents: Integrating LLMs,Playwright,Browser-Use and Web-UI | by KailashPathak | Feb, 2025, accessed March 25, 2025, \url{https://kailash-pathak.medium.com/develop-intelligent-browser-agents-integrating-llms-playwright-browser-use-and-web-ui-ac0836af520b}
+    \bibitem{b9} AutoWebGLM: A Large Language Model-based Web Navigating Agent - arXiv, accessed March 25, 2025, \url{https://arxiv.org/html/2404.03648v2}
+    \bibitem{b10} [2404.03648] AutoWebGLM: A Large Language Model-based Web Navigating Agent - arXiv, accessed March 25, 2025, \url{https://arxiv.org/abs/2404.03648}
+    \bibitem{b11} arxiv.org, accessed March 25, 2025, \url{https://arxiv.org/abs/2409.15441}
+    \bibitem{b12} Large Language Model-Brained GUI Agents: A Survey - arXiv, accessed March 25, 2025, \url{https://arxiv.org/html/2411.18279v1}
+    \bibitem{b13} [2411.18279] Large Language Model-Brained GUI Agents: A Survey - arXiv, accessed March 25, 2025, \url{https://arxiv.org/abs/2411.18279}
+    \bibitem{b14} Paper page - Large Language Model-Brained GUI Agents: A Survey - Hugging Face, accessed March 25, 2025, \url{https://huggingface.co/papers/2411.18279}
+    \bibitem{b15} Should you let ChatGPT control your browser? - WithSecure\texttrademark Labs, accessed March 25, 2025, \url{https://labs.withsecure.com/publications/browser-agents-llm-prompt-injection}
+\end{thebibliography}
 
 \end{document}
