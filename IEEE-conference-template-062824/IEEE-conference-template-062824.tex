@@ -261,7 +261,42 @@ The primary objective of this project is to develop an AI-driven software soluti
           \end{itemize}
 
 \end{enumerate}
+\section{Methodology}
+This segment details our systematic approach, merging analytical rigor with an adaptable execution framework. It outlines the theoretical formulations, step-by-step algorithmic blueprint, and a visual schematic that encapsulates the operational pipeline of our system.
 
+\subsection{Analytical Framework}
+To quantify the efficiency of task automation, we employ a set of equations that serve as the backbone of our performance evaluation. For instance, our effectiveness metric \( E \) is defined as:
+\[
+E = \lambda \cdot \phi(X) + \mu \cdot \psi(Y) + \nu \cdot \omega(Z)
+\]
+Here, \( \phi(X) \) denotes the contribution from interface characteristics, \( \psi(Y) \) reflects the complexity inherent in the assigned tasks, and \( \omega(Z) \) measures the system's responsiveness. The parameters \( \lambda \), \( \mu \), and \( \nu \) are calibrated empirically to ensure optimal performance.
+
+\subsection{Algorithmic Blueprint}
+The operational logic of our system is implemented through a structured sequence that converts user instructions into automated actions. The following pseudo algorithm outlines our approach:
+
+\begin{algorithmic}[1]
+\STATE \textbf{Input:} Instruction \( I \)
+\STATE Decompose \( I \) into discrete command units.
+\STATE Detect and map relevant user interface components.
+\STATE Evaluate interaction potential using the metric \( E \).
+\IF {the computed value exceeds a predefined threshold}
+    \STATE Initiate the corresponding browser operation.
+\ELSE
+    \STATE Reprocess the instruction and reattempt detection.
+\ENDIF
+\STATE \textbf{Output:} Detailed log of executed actions.
+\end{algorithmic}
+
+\subsection{Schematic Overview}
+Figure~\ref{fig:flowchart} presents a custom-designed diagram that visualizes the entire automation pipeline. This schematic illustrates the flow from initial instruction processing through tokenization, analytical evaluation, and finally to decisive action execution. Each module is designed to operate independently, ensuring enhanced modularity and ease of troubleshooting.
+
+\begin{figure}[ht]
+\centering
+\caption{Schematic overview of the automation pipeline, illustrating the progression from input processing to task completion.}
+\label{fig:flowchart}
+\end{figure}
+
+This methodological framework interweaves precise quantitative analysis with a dynamic execution routine, thereby bolstering both the resilience and adaptability of our automated system.
 \section{Literature Survey}
 
 \subsection{Research Paper 1: AutoWebGLM: A Large Language Model-based Web Navigating Agent (Lai et al., 2024)}
